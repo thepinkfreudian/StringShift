@@ -21,7 +21,7 @@
             </div>
             <div class="col-6 d-flex justify-content-end">
                 <button class="btn btn-nav" data-toggle="collapse" data-target="#user-info-display" id="get-user-stats">Toggle User Stats</button>
-                <button class="btn btn-nav" data-toggle="collapse" data-target="#results" id="get-leaderboard">Toggle Leaderboard</button>
+                <button class="btn btn-nav" onclick='window.location.href = "leaderboard.html"'>Leaderboard</button>
             </div>
         </div>
         
@@ -81,21 +81,6 @@
 
             <div id="result-pending"></div>
 
-            <div class="collapse" id="results">
-                <div class="leaderboard">
-                    <table class="leader-table">
-                        <tbody id="leader-tbody">
-                            <tr id="headers">
-                                <th>Rank</th>
-                                <th>Username</th>
-                                <th>Games Won</th>
-                                <th>Games Played</th>
-                                <th>Percent</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </div>
 
         <div class="footer">
@@ -156,10 +141,6 @@
                     if ($('#scrambled').text() != '') {
                         scrambleWord(word);
                 }
-                })
-
-                $('#get-leaderboard').click(function() {
-                    displayLeaderboard();
                 });
             })
         </script>
