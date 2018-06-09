@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=Copse');
+
+body {
+    background-color: #1e225c;
+    color: #00fff3;
+    margin: 0;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00FFF3;
+    text-decoration: underline;
+}
+
+.btn {
+    padding-bottom: 1%;
+    background-color: #00FFF3; 
+    color: #1000ff;
+    border: 1px solid #00FFF3; 
+    border-radius: 3%;
+    transition: background-color 250ms, color 250ms;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #1e225c;
+    color: #00FFF3;
+}
+
+.btn-about {
+    display: block;
+    width: 20%;
+    margin: 0 auto 5% auto;
+    height: auto;
+    background-color: #1e225c; 
+    color: #00FFF3;
+    border: 1px solid #1000ff;
+    border-radius: 3%;
+}
+
+.btn-about:hover {
+    background-color: #00FFF3; 
+    color: #1000ff;
+    border: 1px solid #00FFF3; 
+}
+
+.btn-nav {
+    margin: auto 2%;
+    height: 40px;
+}
+
+.btn-nav:hover {
+    background-color: #1000ff;
+    color: #00FFF3;
+}
+
+.btn-sign-in {
+    width: 50%;
+    height: auto;
+    font-size: 2em;
+}
+
+.modal-content {
+    background-color: #1e225c;
+    color: #00FFF3;
+    text-align: left;
+}
+
+.top-row {
+    height: 60px;
+    background-color: #1000ff;
+    color: #1e225c;
+}
+
+.username-entry {
+    display: table;
+    width: 100%;
+}
+
+input[type=text] {
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 3px;
+    width: 30%;
+    padding: 1%;
+}
+
+.btn-username {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 1%;
+    margin: 0 1%;
+}
+
+.btn-get-word {
+    width: 30%;
+    height: auto;
+    font-size: 1.5em;
+    color: #1000ff;  
+}
+
+.btn-guess {
+    display: table-cell;
+    vertical-align: middle;
+    width: 48%;
+    padding: 1%;
+    margin: 2% 1%;
+}
+
+#user-info-display {
+    background-color: #007dff;
+    width: 100%;
+    text-align: center;
+}
+
+.stat-span {
+    padding: 0 2%;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.container-fluid {
+    max-width: 960px;
+    margin: 2% auto;
+    text-align: center;
+}
+
+.title {
+    margin: auto 2%;
+    font-family: 'Copse', serif;
+    color: #00fff3;  
+}
+
+#nav-title {
+    font-size: 2em;
+}
+
+#main-title {
+    display: block;
+    margin: 4% 0;
+    font-size: 6em;
+}
+
+.username-entry {
+    margin-top: 4%;
+}
+
+#scrambled {
+    padding: 4%;
+    font-family: 'Copse', serif;
+    font-size: 6em;
+    letter-spacing: 5px;
+}
+
+#scrambled-result {
+    padding: 6%;
+    font-family: 'Copse', serif;
+    font-size: 3em;
+}
+
+.guess-entry {
+    display: table;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#guess {
+    width: 100%;
+    display: block;
+}
+
+table {
+    width: 100%;
+    margin: 3%;
+    text-align: left;
+}
+
+tr {
+    padding: 2%;
+    border-bottom: 1px solid rgba(0, 0, 0, .5); 
+}
+
+th {
+    font-family: 'Copse', serif;
+    padding: 2% 2%;
+}
+
+td {
+    width: auto;
+    padding: 1% 2%;
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #1000ff;
+    font-family: 'Copse', serif;
+    text-align: center;
+}
+
+.footer span {
+    display: block;
+}
+
+#result-pending {
+    text-align: center;
+}
+.loading {
+    display: inline-block;
+   /* border: 2px solid #f3f3f3;  Light grey */
+    border-top: 2px solid #00FFF3; /* Blue */
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,167 @@
+<html>
+    
+    <head>
+        <title>string.shift(): word scramble on the blockchain.</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <script src="js/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="js/nebulas.js"></script>
+        <script src="js/nebPay.js"></script>
+        <script src="js/responses.js"></script>
+        <script src="js/game.js"></script>
+        <script src="js/contract_functions.js"></script>
+        <script src="js/vignere.js"></script>
+    </head>
+    
+    <body>
+        <div class="row top-row">
+            <div class="col-6 d-flex justify-content-start">
+                 <span class="title" id="nav-title">string.shift()</span>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <button class="btn btn-nav" data-toggle="collapse" data-target="#user-info-display" id="get-user-stats">Toggle User Stats</button>
+                <button class="btn btn-nav" data-toggle="collapse" data-target="#results" id="get-leaderboard">Toggle Leaderboard</button>
+            </div>
+        </div>
+        
+        <div class="collapse" id="user-info-display">
+            <div id="display-username"></div>
+            <div id="display-user-stats"></div>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="sign-in">
+                <span class="title" id="main-title">string.shift()<button type="button" class="btn btn-about" data-toggle="modal" data-target="#about">About</button></span>
+                <button class="btn btn-sign-in" id="sign-in">Sign In</button>
+            </div>
+
+            <div class="row justify-content-center">
+            <div class="modal fade" id="about" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <p>Your basic word scramble game.</p>
+                          <p>Word difficulty ranges from 'Candyland with your 3-year-old-nephew' to 'Destroying a Nokia 3310.'</p>
+                          <p><strong>New Users: </strong>Click 'Sign In' to register a username. Click 'Sign In' again once your transaction has completed to begin the game.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+            </div>
+            
+            <div class="start">
+                <button class="btn btn-get-word" id="get-word">Get Word</button>
+            </div>
+            
+            <div class="username-entry">
+                <p>Looks like you haven't been here before. Please pick a username to associate with your wallet ID.</p>
+                <input type="text" maxlength="15" id="username">
+                <button class="btn btn-username" id="submit-username">Submit Username</button>
+            </div>
+
+            <div id="username-pending"></div>
+            
+            <div class="scrambled-word">
+                <p id="scrambled"></p>
+                <p id="scrambled-result"></p>
+            </div>
+            
+            <div class="guess-entry">
+                <input type="text" id="guess"> 
+                <button class="btn btn-guess" id="reshuffle">Reshuffle</button>                     
+                <button class="btn btn-guess" id="submit-guess">Submit Guess</button>
+            </div>
+
+            <div id="result-pending"></div>
+
+            <div class="collapse" id="results">
+                <div class="leaderboard">
+                    <table class="leader-table">
+                        <tbody id="leader-tbody">
+                            <tr id="headers">
+                                <th>Rank</th>
+                                <th>Username</th>
+                                <th>Games Won</th>
+                                <th>Games Played</th>
+                                <th>Percent</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span class="footer-text">wordiness & nerdiness built for <a href="http://nebulas.io" target="blank">nebulas.io</a> by <a href="https://www.github.com/thepinkfreudian">thepinkfreudian</a>.</span>
+            <span>Get the Nebulas Web Wallet Extension <a href="https://chrome.google.com/webstore/detail/nasextwallet/gehjkhmhclgnkkhpfamakecfgakkfkco" target="blank">here.</a></span>
+        </div>
+        
+        <script>
+            $(document).ready(function() {
+                getWords();
+                $('#username-pending').hide();
+                $('#scrambled').hide();
+                $('#nav-title').hide();
+                $('.username-entry').hide();
+                $('.guess-entry').hide();
+                $('.start').hide();
+
+
+                $('#sign-in').click(function() {
+                    $('#username-pending').hide();
+                    signIn();
+                });
+                
+                $('#submit-username').click(function() {
+                    var username = $('#username').val();
+                    if (!username) {
+                        alert('Please enter a valid username.');
+                    } else {
+                        createUser(username);
+                    }
+                });
+                
+                $('#get-user-stats').click(function() {
+                    getUserStats();
+                });
+
+                $('#get-word').click(function() {
+                    $('#scrambled-result').hide();
+                    $('#scrambled').show();
+                    if ($('#scrambled').text() === '') {
+                        $('#scrambled-result').text(' ');
+                        scrambleWord(word);
+                    } else {
+                        alert('Whoa there, cowboy. How about you solve this one first?');
+                    }
+                });
+                
+                $('#submit-guess').click(function() {
+                    var guess = $('#guess').val();
+                    if (guess.length < 4) {
+                        alert('Please enter a valid guess.');
+                    } else {
+                        sendGuess(word, guess)
+                    }
+                });
+
+                $('#reshuffle').click(function() {
+                    if ($('#scrambled').text() != '') {
+                        scrambleWord(word);
+                }
+                })
+
+                $('#get-leaderboard').click(function() {
+                    displayLeaderboard();
+                });
+            })
+        </script>
+    </body>
+</html>
