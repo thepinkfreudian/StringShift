@@ -8,7 +8,7 @@ function getWords() {
 
 function setWord(data) {
     var words = data.split(',');
-    var random = Math.floor(Math.random() * (words.length - 1) + 1);
+    var random = Math.floor((Math.random() * (words.length - 1)) + 1);
     word = words[random].toLowerCase();
 }
 
