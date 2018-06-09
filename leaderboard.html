@@ -1,0 +1,69 @@
+<html>
+    
+    <head>
+        <title>string.shift(): word scramble on the blockchain.</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <script src="js/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="js/nebulas.js"></script>
+        <script src="js/nebPay.js"></script>
+        <script src="js/responses.js"></script>
+        <script src="js/game.js"></script>
+        <script src="js/contract_functions.js"></script>
+        <script src="js/vignere.js"></script>
+    </head>
+    
+    <body>
+        <div class="row top-row">
+            <div class="col-6 d-flex justify-content-start">
+                 <span class="title" id="nav-title">string.shift()</span>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <button class="btn btn-nav" data-toggle="collapse" data-target="#user-info-display" id="get-user-stats">Toggle User Stats</button>
+                <button class="btn btn-nav" onclick='window.location.href = "index.html"'>Back to Game</button>
+            </div>
+        </div>
+        
+        <div class="collapse" id="user-info-display">
+            <div id="display-username"></div>
+            <div id="display-user-stats"></div>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="sign-in">
+                <span class="title" id="main-title">Leaderboard</span>
+            </div>
+
+            <div class="leaderboard">
+                <table class="leader-table">
+                    <tbody id="leader-tbody">
+                        <tr id="headers">
+                            <th>Rank</th>
+                            <th>Username</th>
+                            <th>Games Won</th>
+                            <th>Games Played</th>
+                            <th>Percent</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <span class="footer-text">wordiness & nerdiness built for <a href="http://nebulas.io" target="blank">nebulas.io</a> by <a href="https://www.github.com/thepinkfreudian">thepinkfreudian</a>.</span>
+            <span>Get the Nebulas Web Wallet Extension <a href="https://chrome.google.com/webstore/detail/nasextwallet/gehjkhmhclgnkkhpfamakecfgakkfkco" target="blank">here.</a></span>
+        </div>
+        
+        <script>
+            $(document).ready(function() {
+                displayLeaderboard();
+
+                $('#get-user-stats').click(function() {
+                    getUserStats();
+                });
+            })
+        </script>
+    </body>
+</html>
