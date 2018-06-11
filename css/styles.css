@@ -2,7 +2,7 @@
 
 body {
     background-color: #1e225c;
-    color: #626be5;
+    color: #00fff3;
     margin: 0;
 }
 
@@ -12,15 +12,15 @@ a {
 }
 
 a:hover {
-    color: #626be5;
+    color: #00FFF3;
     text-decoration: underline;
 }
 
 .btn {
     padding-bottom: 1%;
-    background-color: #626be5; 
+    background-color: #00FFF3; 
     color: #1000ff;
-    border: 1px solid #626be5; 
+    border: 1px solid #00FFF3; 
     border-radius: 3%;
     transition: background-color 250ms, color 250ms;
 }
@@ -28,7 +28,7 @@ a:hover {
 .btn:hover {
     cursor: pointer;
     background-color: #1e225c;
-    color: #626be5;
+    color: #00FFF3;
 }
 
 .btn-about {
@@ -37,15 +37,15 @@ a:hover {
     margin: 0 auto 5% auto;
     height: auto;
     background-color: #1e225c; 
-    color: #626be5;
+    color: #00FFF3;
     border: 1px solid #1000ff;
     border-radius: 3%;
 }
 
 .btn-about:hover {
-    background-color: #626be5; 
+    background-color: #00FFF3; 
     color: #1000ff;
-    border: 1px solid #626be5; 
+    border: 1px solid #00FFF3; 
 }
 
 .btn-nav {
@@ -55,7 +55,7 @@ a:hover {
 
 .btn-nav:hover {
     background-color: #1000ff;
-    color: #626be5;
+    color: #00FFF3;
 }
 
 .btn-sign-in {
