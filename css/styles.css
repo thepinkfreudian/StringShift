@@ -72,7 +72,7 @@ a:hover {
 
 .top-row {
     height: 60px;
-    background-color: #1000ff;
+    background-color: #7484fc;
     color: #1e225c;
 }
 
@@ -100,7 +100,7 @@ input[type=text] {
     width: 30%;
     height: auto;
     font-size: 1.5em;
-    color: #1000ff;  
+    color: #7484fc;  
 }
 
 .btn-guess {
@@ -204,7 +204,7 @@ td {
     position: fixed;
     left: 0;
     bottom: 0;
-    background-color: #1000ff;
+    background-color: #7484fc;
     font-family: 'Copse', serif;
     text-align: center;
 }
